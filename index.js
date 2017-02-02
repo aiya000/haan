@@ -1,13 +1,23 @@
 function say () {
-	var ghPagesUrl    = "https://aiya000.github.io/haan";
+	var userName      = daijobu.senderName.value;
 	var token         = daijobu.token.value;
 	var randomChannel = "C2JBXJEP2";
-	var text          = daijobu.senderName.value + "「Googleハングアウトの用意はできています」\n" + ghPagesUrl;
+	var text          = "Googleハングアウトの用意はできています。";
+	var ghPagesUrl    = "https://github.com/aiya000/haan";
+	var hangoutUrl    = "https://hangouts.google.com";
 
-	var apiUrl  = "https://slack.com/api/chat.postMessage" +
-		"?token="   + token   +
+	var attachmentsText = [ghPagesUrl, hangoutUrl]
+		.map(function (x) { return "- " + x; })
+		.join("\n");
+	var apiUrl = encodeURI(
+		"https://slack.com/api/chat.postMessage" +
+		"?token=" + token +
 		"&channel=" + randomChannel +
-		"&text="    + text;
+		"&username=" + userName +
+		"&text=" + text +
+		"&attachments=" + '[{"text": "' + attachmentsText + '"}]'
+		);
+
 	var request = new XMLHttpRequest();
 	request.open("POST", apiUrl, false);
 	request.onload = function() {
