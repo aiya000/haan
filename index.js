@@ -1,7 +1,7 @@
 function say () {
 	var token         = daijobu.token.value;
 	var randomChannel = "C2JBXJEP2";
-	var text          = "Googleハングアウトの用意はできています。";
+	var text          = daijobu.senderName.value + "「Googleハングアウトの用意はできています」";
 
 	var apiUrl  = "https://slack.com/api/chat.postMessage" +
 		"?token="   + token   +
