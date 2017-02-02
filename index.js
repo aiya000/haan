@@ -1,5 +1,5 @@
 function say () {
-	var userName      = daijobu.senderName.value;
+	var userName      = daijobu.userName.value;
 	var token         = daijobu.token.value;
 	var randomChannel = "C2JBXJEP2";
 	var text          = "Googleハングアウトの用意はできています。";
