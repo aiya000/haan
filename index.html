@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>haan</title>
+<link rel="stylesheet" href="index.css">
 <script src="index.js"></script>
 </head>
 <body>
@@ -12,7 +13,19 @@
         （普通に安全で、外部には送信されない（大丈夫）↑） <br/>
         <button type="submit" onclick="say()">Googleハングアウトしたい時に押すボタン</button>
     </form>
-
+    <br/>
     トークンは<a href="https://api.slack.com/docs/oauth-test-tokens">＞＞ここ＜＜</a>で取得しましょう（テストトークン（トークンのシェアはしないようにしましょう））
+
+    <hr/>
+
+    * ルール（手順）
+    <ol>
+        <li>AがGoogleハングアウトを立ち上げる</li>
+        <li>Aがボタンを押す</li>
+        <li>BがGoogleハングアウトを立ち上げる</li>
+        <li>Bがボタンを押す</li>
+        <li>BがAのGoogleハングアウトに通話をかける</li>
+        <li>👍</li>
+    </ol>
 </body>
 </html>
